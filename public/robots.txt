@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://ecell.galgotiasuniversity.edu.in/sitemap.xml

@@ -1,0 +1,12 @@
+{
+  "name": "GU E-Cell",
+  "short_name": "E-Cell",
+  "description": "Galgotias University Entrepreneurship Cell",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#05050f",
+  "theme_color": "#6c47ff",
+  "icons": [
+    { "src": "/favicon.svg", "sizes": "any", "type": "image/svg+xml" }
+  ]
+}
