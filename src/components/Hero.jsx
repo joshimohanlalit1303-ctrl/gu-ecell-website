@@ -104,7 +104,7 @@ export default function Hero() {
           <a href="#cta" className="btn btn-primary mag-btn"
             onMouseMove={e => onMagMove(e, e.currentTarget)} onMouseLeave={onMagLeave}
             onClick={e => { e.preventDefault(); e.stopPropagation(); document.getElementById('cta')?.scrollIntoView({ behavior: 'smooth' }) }}>
-            Apply to E-Cell
+            Apply to GEC
           </a>
           <a href="#events" className="btn btn-ghost mag-btn"
             onMouseMove={e => onMagMove(e, e.currentTarget)} onMouseLeave={onMagLeave}

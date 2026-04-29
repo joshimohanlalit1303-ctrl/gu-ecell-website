@@ -1,14 +1,14 @@
 import { useReveal } from '../hooks/useReveal'
 
 const MENTORS = [
+  { initials: 'DG', name: 'Dr. Dhruv Galgotia', role: 'CEO, Galgotias University', bio: "Spearheading a culture of innovation and excellence, empowering the next generation of global leaders and entrepreneurs." },
   { initials: 'AG', name: 'Dr. Aradhana Galgotia', role: 'Chancellor & Visionary Leader', bio: "Driving GU's entrepreneurship agenda with decades of academic and industry leadership." },
   { initials: 'KM', name: 'Dr. Kamal Kishore Malhotra', role: 'Senior Mentor', bio: 'Bridging academia and industry with strategic mentorship for student ventures.' },
 ]
 const LEADERS = [
-  { role: 'President', name: 'Aastha Bajaj' },
-  { role: 'Vice President', name: 'Anshu Raj' },
-  { role: 'Secretary', name: 'Abhinna Chaudhary' },
-  { role: 'Treasurer', name: 'Umang Jain' },
+  { role: 'President', name: 'Tanishqa Giri', initials: 'TG' },
+  { role: 'Vice President', name: 'Piyush Bhardwaj', initials: 'PB' },
+  { role: 'Secretary', name: 'Simran Jaiswal', initials: 'SJ' },
 ]
 
 export default function Mentors() {
@@ -45,6 +45,7 @@ export default function Mentors() {
         <div className="leaders-grid">
           {LEADERS.map((l, i) => (
             <div key={l.role} className="leader-card reveal" style={{ '--delay': `${i * 0.08}s` }}>
+              <div className="leader-avatar">{l.initials}</div>
               <span className="leader-role">{l.role}</span>
               <h3>{l.name}</h3>
             </div>

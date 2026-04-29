@@ -99,11 +99,11 @@ export default function TubesCanvas() {
 
     const onTouchStart = e => {
       touchMoved = false
-      dispatchMouse('mousemove', e.touches[0], canvas)
+      dispatchMouse('mousemove', e.touches[0], window)
     }
     const onTouchMove = e => {
       touchMoved = true
-      dispatchMouse('mousemove', e.touches[0], canvas)
+      dispatchMouse('mousemove', e.touches[0], window)
     }
     const onTouchEnd = () => {
       // Only recolor on a clean tap (not a scroll swipe)
@@ -111,8 +111,8 @@ export default function TubesCanvas() {
       touchMoved = false
     }
 
-    window.addEventListener('touchstart', onTouchStart, { passive: true })
-    window.addEventListener('touchmove',  onTouchMove,  { passive: true })
+    window.addEventListener('touchstart', onTouchStart, { passive: false })
+    window.addEventListener('touchmove',  onTouchMove,  { passive: false })
     window.addEventListener('touchend',   onTouchEnd,   { passive: true })
 
     // ── Scroll: fade out + disable pointer-events past hero ──

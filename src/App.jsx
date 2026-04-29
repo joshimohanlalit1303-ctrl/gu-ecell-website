@@ -10,6 +10,9 @@ import Teams from './components/Teams'
 import Events from './components/Events'
 import Mentors from './components/Mentors'
 import CTA from './components/CTA'
+import Footer from './components/Footer'
+import Antigravity from './pages/Antigravity/Antigravity'
+import CohortPopup from './components/CohortPopup'
 
 // Lazy load heavy 3D components — they don't affect first paint
 const ParallaxCanvas = lazy(() => import('./components/ParallaxCanvas'))
@@ -18,6 +21,9 @@ const TubesCanvas = lazy(() => import('./components/TubesCanvas'))
 export default function App() {
   const [loaded, setLoaded] = useState(false)
   const [scrollPct, setScrollPct] = useState(0)
+  
+  const path = window.location.pathname;
+  const isAntigravity = path.startsWith('/antigravity');
 
   // Global scroll-reveal — catches every .reveal in every component
   useEffect(() => {
@@ -36,7 +42,7 @@ export default function App() {
       return () => obs.disconnect()
     }, 120)
     return () => clearTimeout(t)
-  }, [])
+  }, [path])
 
   useEffect(() => {
     const onScroll = () => {
@@ -49,7 +55,7 @@ export default function App() {
 
   return (
     <>
-      <Loader onDone={() => setLoaded(true)} />
+      {!isAntigravity && <Loader onDone={() => setLoaded(true)} />}
       <Cursor />
 
       {/* Scroll progress bar */}
@@ -73,16 +79,25 @@ export default function App() {
       </Suspense>
 
       <Nav />
+      
+      {!isAntigravity && <CohortPopup />}
 
       <main id="main-content">
-        <Hero />
-        <Ticker />
-        <Stats />
-        <About />
-        <Teams />
-        <Events />
-        <Mentors />
-        <CTA />
+        {isAntigravity ? (
+          <Antigravity />
+        ) : (
+          <>
+            <Hero />
+            <Ticker />
+            <Stats />
+            <About />
+            <Teams />
+            <Events />
+            <Mentors />
+            <CTA />
+          </>
+        )}
+        <Footer />
       </main>
     </>
   )

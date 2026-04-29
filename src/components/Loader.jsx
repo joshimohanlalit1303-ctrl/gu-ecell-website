@@ -32,7 +32,7 @@ export default function Loader({ onDone }) {
           <div className="hex-ring hex-ring--3" />
           <div className="hex-core">{pct}%</div>
         </div>
-        <p className="loader-label">Initializing E-Cell</p>
+        <p className="loader-label">Initializing GEC</p>
         <div className="loader-bar">
           <div className="loader-fill" style={{ width: pct + '%' }} />
         </div>

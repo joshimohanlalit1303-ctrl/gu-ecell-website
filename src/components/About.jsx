@@ -6,10 +6,10 @@ export default function About() {
     <section id="about" className="section about-section" ref={ref}>
       <div className="about-inner">
         <div className="about-text">
-          <p className="section-tag reveal">About E-Cell</p>
+          <p className="section-tag reveal">About Galgotias Entrepreneurship Cell</p>
           <h2 className="section-title reveal">More than a club.<br /><em>An ecosystem.</em></h2>
           <p className="section-body reveal">
-            E-Cell connects student entrepreneurs with seasoned mentors, investors,
+            Galgotias Entrepreneurship Cell (GEC) connects student entrepreneurs with seasoned mentors, investors,
             and industry leaders. We provide the tools, resources, and community
             to turn raw ideas into market-ready ventures.
           </p>
