@@ -67,11 +67,10 @@ export default function App() {
       <Suspense fallback={null}>
         <ParallaxCanvas />
       </Suspense>
-      {loaded && (
-        <Suspense fallback={null}>
-          <TubesCanvas />
-        </Suspense>
-      )}
+      {/* Tubes load eagerly (CDN import is async, won't block paint) */}
+      <Suspense fallback={null}>
+        <TubesCanvas />
+      </Suspense>
 
       <Nav />
 
