@@ -28,7 +28,7 @@ function Counter({ target, suffix = '' }) {
 }
 
 const stats = [
-  { val: 100, suffix: '+', label: 'Startups Incubated' },
+  { val: 100, suffix: ' +', label: 'Startups' },
   { val: 8, suffix: '', label: 'Specialized Teams' },
   { val: 500, suffix: '+', label: 'Students Engaged' },
   { val: 24, suffix: 'hr', label: 'Hackathon Marathon' },

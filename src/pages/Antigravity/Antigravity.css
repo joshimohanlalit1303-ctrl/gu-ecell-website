@@ -636,6 +636,12 @@
   .ag-mentor-card { width: calc(50% - 12px); }
   .ag-details-banner { padding: 32px; }
   .ag-media-card { aspect-ratio: 4/3; }
+  .ag-media-overlay { padding: 24px; text-align: center; align-items: center; }
+  .ag-media-overlay h2 { font-size: 20px; max-width: 100%; margin: 0; }
+  .ag-media-author { align-self: center; padding: 8px 16px; }
+  .ag-media-author strong { font-size: 13px; }
+  .ag-media-author span { font-size: 11px; }
+  .ag-media-duration { align-self: center; }
 }
 
 /* OUTCOMES */
@@ -681,4 +687,7 @@
   .ag-journey-tab.active::before { width: 100%; height: 4px; left: 0; bottom: 0; top: auto; }
   .ag-journey-content { width: 100%; padding: 32px 24px; }
   .ag-j-courses { grid-template-columns: 1fr; gap: 24px; }
+  .ag-outcome-card { flex: 0 0 280px; }
+  .ag-outcome-body { padding: 24px; }
+  .ag-outcome-title { font-size: 18px; }
 }

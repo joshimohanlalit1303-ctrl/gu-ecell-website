@@ -137,8 +137,8 @@ export default function Hero() {
         </svg>
         <div className="badge-content">
           <span className="badge-num">{badgeVal}</span>
-          <span className="badge-plus">+</span>
-          <span className="badge-lbl">Startups<br />Incubated</span>
+          <span className="badge-plus"> +</span>
+          <span className="badge-lbl">Startups</span>
         </div>
       </motion.div>
 
