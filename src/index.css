@@ -245,7 +245,13 @@ footer{position:relative;z-index:20;padding:60px 48px;border-top:1px solid var(-
 .footer-sub{font-size:12px;color:var(--white30);margin-top:4px;letter-spacing:.06em}
 .footer-info p{font-size:13px;color:var(--white70);line-height:2}
 .footer-info a{color:var(--accent);transition:opacity .3s}
+.footer-bottom{width:100%;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;margin-top:20px;padding-top:20px;border-top:1px dashed rgba(255,255,255,0.08)}
 .footer-copy{font-size:12px;color:var(--white30)}
+.dev-mark{display:flex;align-items:center;gap:6px;font-family:var(--mono);font-size:10px;letter-spacing:0.15em;color:var(--white30);text-transform:uppercase}
+.dev-mark-name{font-weight:700;letter-spacing:0.2em;color:var(--accent);position:relative;transition:all 0.3s;padding:2px 0;cursor:pointer}
+.dev-mark-name:hover{color:#fff;text-shadow:0 0 12px var(--accent)}
+.dev-mark-glow{position:absolute;bottom:0;left:0;width:0;height:1px;background:var(--accent);transition:width 0.4s var(--ease);box-shadow:0 0 8px var(--accent)}
+.dev-mark-name:hover .dev-mark-glow{width:100%}
 
 /* RESPONSIVE */
 @media(max-width:900px){

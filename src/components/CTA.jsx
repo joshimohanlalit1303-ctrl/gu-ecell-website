@@ -37,7 +37,16 @@ export default function CTA() {
               </a>
             </p>
           </div>
-          <p className="footer-copy">© 2026 GU E-Cell. All rights reserved.</p>
+          <div className="footer-bottom">
+            <p className="footer-copy">© 2026 GU E-Cell. All rights reserved.</p>
+            <div className="dev-mark">
+              <span>Engineered by</span>
+              <a href="https://github.com/joshimohanlalit1303-ctrl" target="_blank" rel="noreferrer" className="dev-mark-name">
+                Lalit
+                <span className="dev-mark-glow"></span>
+              </a>
+            </div>
+          </div>
         </div>
       </footer>
     </>
