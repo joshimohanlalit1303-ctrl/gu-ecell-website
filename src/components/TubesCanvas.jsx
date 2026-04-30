@@ -91,28 +91,27 @@ export default function TubesCanvas() {
       })
       .catch(err => console.warn('[TubesCanvas] failed to load:', err))
 
-    // ── Touch → Mouse bridge (makes tubes follow finger on mobile) ──
-    // Listeners go on WINDOW, not canvas, because the hero section sits at
-    // z-index:20 on top of the canvas (z-index:2). Canvas-level touch events
-    // would never fire when the user touches the hero text / buttons.
-    let touchMoved = false
-
-    const onTouchStart = e => {
-      touchMoved = false
-      dispatchMouse('mousemove', e.touches[0], window)
-    }
-    const onTouchMove = e => {
-      touchMoved = true
-      dispatchMouse('mousemove', e.touches[0], window)
-    }
-    const onTouchEnd = () => {
-      // Only recolor on a clean tap (not a scroll swipe)
-      if (!touchMoved) recolor()
-      touchMoved = false
+    // ── Pointer → Mouse bridge (makes tubes follow cursor/finger) ──
+    let rafid = null
+    const onPointerMove = e => {
+      // Throttle to RAF for performance
+      if (rafid) cancelAnimationFrame(rafid)
+      rafid = requestAnimationFrame(() => {
+        // Synthesise mousemove for the library
+        const evt = new MouseEvent('mousemove', {
+          bubbles: true,
+          cancelable: true,
+          clientX: e.clientX,
+          clientY: e.clientY,
+          view: window,
+        })
+        window.dispatchEvent(evt)
+      })
     }
 
-    window.addEventListener('touchstart', onTouchStart, { passive: false })
-    window.addEventListener('touchmove',  onTouchMove,  { passive: false })
+    const onTouchEnd = () => recolor()
+
+    window.addEventListener('pointermove', onPointerMove, { passive: true })
     window.addEventListener('touchend',   onTouchEnd,   { passive: true })
 
     // ── Scroll: fade out + disable pointer-events past hero ──
@@ -137,11 +136,11 @@ export default function TubesCanvas() {
 
     return () => {
       mounted = false
+      if (rafid) cancelAnimationFrame(rafid)
       window.removeEventListener('resize',        syncSize)
       window.removeEventListener('scroll',        onScroll)
       window.removeEventListener('ecell-recolor', recolor)
-      window.removeEventListener('touchstart',    onTouchStart)
-      window.removeEventListener('touchmove',     onTouchMove)
+      window.removeEventListener('pointermove',   onPointerMove)
       window.removeEventListener('touchend',      onTouchEnd)
       appRef.current = null
     }

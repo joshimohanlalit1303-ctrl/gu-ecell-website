@@ -139,10 +139,7 @@ export default function Antigravity() {
           
           <div className="ag-mentors-grid">
             {[
-              { initials: 'DG', name: 'Dr. Dhruv', last: 'Galgotia', title: 'CEO', org: 'Galgotias University', img: dhruvImg, scale: 2.1, x: '0%', y: '-10%' },
-              { initials: 'AG', name: 'Aradhana', last: 'Galgotias', title: 'Operational Director', org: 'Galgotias University', img: aradhanaImg, scale: 2.1, x: '0%', y: '-10%' },
-              { initials: 'KM', name: 'Mr. Kamal Kishor', last: 'Malhotra', title: 'CEO', org: 'GICRISE', img: kamalImg, scale: 1.8, x: '0%', y: '-5%' },
-              { initials: 'TG', name: 'Tanishqa', last: 'Giri', title: 'President', org: 'GEC', img: tanishqaImg, scale: 2.1, x: '18%', y: '-10%' },
+              { initials: 'TG', name: 'Tanishqa', last: 'Giri', title: 'President', org: 'GEC', img: tanishqaImg, scale: 2.8, x: '12%', y: '-15%' },
               { initials: 'PB', name: 'Piyush', last: 'Bhardwaj', title: 'Vice President', org: 'GEC', img: piyushImg, scale: 1.4, x: '0%', y: '-5%' },
               { initials: 'SJ', name: 'Simran', last: 'Jaiswal', title: 'Secretary', org: 'GEC', img: simranImg, scale: 1.05, x: '0%', y: '0%' },
             ].map((p, i) => (
@@ -153,7 +150,7 @@ export default function Antigravity() {
                 '--img-y': p.y || '0%'
               }} key={i}>
                 <div className="ag-mentor-avatar">
-                  {p.img ? <img src={p.img} alt={p.name} className="ag-mentor-img" /> : <div className="ag-mentor-placeholder" style={{fontSize: '16px', fontWeight: 'bold'}}>{p.initials}</div>}
+                  {p.img ? <img src={p.img} alt={p.name} className="ag-mentor-img" loading="lazy" /> : <div className="ag-mentor-placeholder" style={{fontSize: '16px', fontWeight: 'bold'}}>{p.initials}</div>}
                 </div>
                 <div className="ag-mentor-info">
                   <h4>{p.name} <strong>{p.last}</strong></h4>
@@ -292,7 +289,8 @@ export default function Antigravity() {
           <div className="ag-outcomes-container">
             {OUTCOMES.map((out, idx) => (
               <div className="ag-outcome-card" key={idx}>
-                <div className="ag-outcome-img" style={{backgroundImage: `url(${out.img})`, backgroundSize: 'cover', backgroundPosition: 'center'}}>
+                <div className="ag-outcome-img-wrap">
+                  <img src={out.img} alt={out.title} className="ag-outcome-img-el" loading="lazy" />
                   <div className="ag-outcome-img-overlay"></div>
                 </div>
                 <div className="ag-outcome-body">

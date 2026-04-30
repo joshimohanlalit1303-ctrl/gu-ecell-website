@@ -8,14 +8,14 @@ import piyushImg from '../assets/team/piyush.png'
 import simranImg from '../assets/team/simran.png'
 
 const MENTORS = [
-  { initials: 'DG', name: 'Dr. Dhruv Galgotia', role: 'CEO, Galgotias University', img: dhruvImg, scale: 1.4, x: '0%', y: '-5%', bio: "Spearheading a culture of innovation and excellence, empowering the next generation of global leaders and entrepreneurs." },
-  { initials: 'AG', name: 'Aradhana Galgotias', role: 'Operational Director', img: aradhanaImg, scale: 1.4, x: '0%', y: '-5%', bio: "Driving GU's entrepreneurship agenda with decades of academic and industry leadership." },
-  { initials: 'KM', name: 'Mr. Kamal Kishor Malhotra', role: 'CEO of GICRISE', img: kamalImg, scale: 1.2, x: '0%', y: '0%', bio: 'Bridging academia and industry with strategic mentorship for student ventures.' },
+  { initials: 'DG', name: 'Dr. Dhruv Galgotia', role: 'CEO, Galgotias University', img: dhruvImg, scale: 1.6, x: '0%', y: '-8%', bio: "Spearheading a culture of innovation and excellence, empowering the next generation of global leaders and entrepreneurs." },
+  { initials: 'AG', name: 'Aradhana Galgotias', role: 'Operational Director', img: aradhanaImg, scale: 1.6, x: '0%', y: '-8%', bio: "Driving GU's entrepreneurship agenda with decades of academic and industry leadership." },
+  { initials: 'KM', name: 'Mr. Kamal Kishor Malhotra', role: 'CEO of GICRISE', img: kamalImg, scale: 1.6, x: '0%', y: '-8%', bio: 'Bridging academia and industry with strategic mentorship for student ventures.' },
 ]
 const LEADERS = [
-  { role: 'President', name: 'Tanishqa Giri', initials: 'TG', img: tanishqaImg, scale: 2.1, x: '-5%', y: '-10%', linkedin: 'https://www.linkedin.com/in/tanishqa-giri-b29a15260/' },
-  { role: 'Vice President', name: 'Piyush Bhardwaj', initials: 'PB', img: piyushImg, scale: 1.4, x: '0%', y: '-5%', linkedin: 'https://www.linkedin.com/in/piyush-bhardwaj-2a6b98247/' },
-  { role: 'Secretary', name: 'Simran Jaiswal', initials: 'SJ', img: simranImg, scale: 1.05, x: '0%', y: '0%', linkedin: 'https://www.linkedin.com/in/simran-jaiswal-62ba4b2b7/' },
+  { role: 'President', name: 'Tanishqa Giri', initials: 'TG', img: tanishqaImg, scale: 2.8, x: '-8%', y: '-15%', linkedin: 'https://www.linkedin.com/in/tanishqa-giri-b29a15260/' },
+  { role: 'Vice President', name: 'Piyush Bhardwaj', initials: 'PB', img: piyushImg, scale: 1.6, x: '0%', y: '-8%', linkedin: 'https://www.linkedin.com/in/piyush-bhardwaj-2a6b98247/' },
+  { role: 'Secretary', name: 'Simran Jaiswal', initials: 'SJ', img: simranImg, scale: 1.4, x: '0%', y: '-2%', linkedin: 'https://www.linkedin.com/in/simran-jaiswal-62ba4b2b7/' },
 ]
 
 export default function Mentors() {
@@ -40,7 +40,7 @@ export default function Mentors() {
               <div className="mentor-avatar">
                 <div className="avatar-ring" />
                 {m.img ? (
-                  <img src={m.img} alt={m.name} className="mentor-img-obj" />
+                  <img src={m.img} alt={m.name} className="mentor-img-obj" loading="lazy" />
                 ) : (
                   <div className="avatar-initials">{m.initials}</div>
                 )}
@@ -69,7 +69,7 @@ export default function Mentors() {
               '--img-y': l.y || '0%' 
             }}>
               <div className="leader-avatar">
-                {l.img ? <img src={l.img} alt={l.name} className="leader-img" /> : l.initials}
+                {l.img ? <img src={l.img} alt={l.name} className="leader-img" loading="lazy" /> : l.initials}
               </div>
               <div className="leader-content">
                 <span className="leader-role">{l.role}</span>
