@@ -303,10 +303,10 @@
 }
 
 .ag-mentor-card {
-  width: 180px;
+  width: 240px;
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 20px;
   position: relative;
 }
 
@@ -318,9 +318,21 @@
   position: relative;
   overflow: visible;
   z-index: 1;
-  border: 1px solid rgba(108,71,255,0.3);
-  box-shadow: inset 0 0 30px rgba(108,71,255,0.3);
+  border: 1px solid rgba(108,71,255,0.4);
+  box-shadow: inset 0 0 40px rgba(108,71,255,0.25);
+  animation: agFloat 6s ease-in-out infinite;
 }
+
+.ag-mentor-avatar::after {
+  content: '';
+  position: absolute;
+  inset: -12px;
+  border-radius: 50%;
+  border: 1px dashed rgba(108,71,255,0.5);
+  animation: spin 20s linear infinite;
+}
+
+@keyframes agFloat { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
 
 .ag-mentor-img {
   width: 130%;
