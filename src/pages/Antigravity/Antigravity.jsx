@@ -167,7 +167,7 @@ export default function Antigravity() {
           </div>
 
           {/* Founders Section */}
-          <div className="ag-team-group" style={{ marginTop: '100px' }}>
+          <div className="ag-team-group">
             <h2 className="ag-section-title" style={{ marginBottom: '60px' }}>Founders</h2>
             <div className="ag-mentors-grid">
               {[
@@ -177,7 +177,7 @@ export default function Antigravity() {
           </div>
 
           {/* Mentors Section */}
-          <div className="ag-team-group" style={{ marginTop: '100px' }}>
+          <div className="ag-team-group">
             <h2 className="ag-section-title" style={{ marginBottom: '60px' }}>Mentors</h2>
             <div className="ag-mentors-grid">
               {[
@@ -190,7 +190,7 @@ export default function Antigravity() {
           </div>
 
           {/* GEC Team Section */}
-          <div className="ag-team-group" style={{ marginTop: '100px' }}>
+          <div className="ag-team-group">
             <h2 className="ag-section-title" style={{ marginBottom: '60px' }}>GEC Team</h2>
             <div className="ag-mentors-grid">
               {[

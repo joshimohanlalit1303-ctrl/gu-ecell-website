@@ -19,10 +19,31 @@
 }
 
 .ag-section-title {
-  font-size: 28px;
-  font-weight: 500;
-  margin-bottom: 40px;
+  font-size: clamp(32px, 5vw, 42px);
+  font-weight: 800;
+  margin-bottom: 60px;
   color: #fff;
+  position: relative;
+  display: inline-block;
+}
+
+.ag-section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -12px;
+  left: 0;
+  width: 60px;
+  height: 4px;
+  background: linear-gradient(90deg, #a78bfa, transparent);
+  border-radius: 2px;
+}
+
+.ag-team-group {
+  margin-bottom: 120px;
+}
+
+.ag-team-group:last-child {
+  margin-bottom: 0;
 }
 
 /* ================= HERO SECTION ================= */
