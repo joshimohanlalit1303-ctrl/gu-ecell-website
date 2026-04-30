@@ -226,6 +226,8 @@ export default function Antigravity() {
             ....and <strong>20+</strong> startup founders
           </div>
         </div>
+      </section>
+
       {/* 4. Leadership Messages */}
       <section className="ag-messages-section">
         <div className="ag-container">
