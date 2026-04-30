@@ -24,6 +24,25 @@ const JOURNEY_TERMS = [
   { id: 6, name: 'Term 06', title: 'Founder Mode', courses: ['Leadership', 'Hiring', 'Scaling Culture'], bootcamps: ['Recruitment Sprint', 'Operating Rhythms'], checkpoint: 'Final Demo Day', output: 'Ready for seed funding or profitable bootstrapping.' },
 ];
 
+function TeamCard({ p, i }) {
+  return (
+    <div className="ag-mentor-card" style={{ 
+      transitionDelay: `${i * 0.05}s`,
+      '--img-scale': p.scale || 1,
+      '--img-x': p.x || '0%',
+      '--img-y': p.y || '0%'
+    }}>
+      <div className="ag-mentor-avatar">
+        {p.img ? <img src={p.img} alt={p.name} className="ag-mentor-img" loading="lazy" /> : <div className="ag-mentor-placeholder" style={{fontSize: '24px', fontWeight: 'bold', color: 'rgba(255,255,255,0.4)', fontFamily: 'var(--mono)'}}>{p.initials}</div>}
+      </div>
+      <div className="ag-mentor-info">
+        <h4>{p.name} <strong>{p.last}</strong></h4>
+        <p>{p.title}<br/>{p.org}</p>
+      </div>
+    </div>
+  );
+}
+
 export default function Antigravity() {
   const [activeTerm, setActiveTerm] = useState(1);
   const currentTermData = JOURNEY_TERMS.find(t => t.id === activeTerm);
@@ -132,35 +151,58 @@ export default function Antigravity() {
         </div>
       </section>
 
-      {/* 3. Supporters and Investors (Mentors) */}
+      {/* 3. Team & Mentorship Sections */}
       <section className="ag-mentors-section">
         <div className="ag-container">
-          <h2 className="ag-section-title" style={{ marginBottom: '80px' }}>Supporters and Mentors</h2>
           
-          <div className="ag-mentors-grid">
-            {[
-              { initials: 'TG', name: 'Tanishqa', last: 'Giri', title: 'President', org: 'GEC', img: tanishqaImg, scale: 3.0, x: '0%', y: '-10%' },
-              { initials: 'PB', name: 'Piyush', last: 'Bhardwaj', title: 'Vice President', org: 'GEC', img: piyushImg, scale: 1.6, x: '0%', y: '-10%' },
-              { initials: 'SJ', name: 'Simran', last: 'Jaiswal', title: 'Secretary', org: 'GEC', img: simranImg, scale: 1.4, x: '0%', y: '-10%' },
-            ].map((p, i) => (
-              <div className="ag-mentor-card" style={{ 
-                transitionDelay: `${i * 0.05}s`,
-                '--img-scale': p.scale || 1,
-                '--img-x': p.x || '0%',
-                '--img-y': p.y || '0%'
-              }} key={i}>
-                <div className="ag-mentor-avatar">
-                  {p.img ? <img src={p.img} alt={p.name} className="ag-mentor-img" loading="lazy" /> : <div className="ag-mentor-placeholder" style={{fontSize: '16px', fontWeight: 'bold'}}>{p.initials}</div>}
-                </div>
-                <div className="ag-mentor-info">
-                  <h4>{p.name} <strong>{p.last}</strong></h4>
-                  <p>{p.title}<br/>{p.org}</p>
-                </div>
-              </div>
-            ))}
-            <div className="ag-mentor-more" style={{transitionDelay: '0.4s'}}>
-              ....and <strong>20+</strong> startup founders
+          {/* Supporters Section */}
+          <div className="ag-team-group">
+            <h2 className="ag-section-title" style={{ marginBottom: '60px' }}>Supporters</h2>
+            <div className="ag-mentors-grid">
+              {[
+                { initials: 'DG', name: 'Dr. Dhruv', last: 'Galgotias', title: 'CEO', org: 'Galgotias University', img: dhruvImg, scale: 1.6, x: '0%', y: '-10%' },
+                { initials: 'AG', name: 'Ms. Aradhana', last: 'Galgotias', title: 'Operational Director', org: 'Galgotias University', img: aradhanaImg, scale: 1.6, x: '0%', y: '-10%' },
+              ].map((p, i) => <TeamCard key={i} p={p} i={i} />)}
             </div>
+          </div>
+
+          {/* Founders Section */}
+          <div className="ag-team-group" style={{ marginTop: '100px' }}>
+            <h2 className="ag-section-title" style={{ marginBottom: '60px' }}>Founders</h2>
+            <div className="ag-mentors-grid">
+              {[
+                { initials: 'RM', name: 'Mr. Rachit', last: 'Mathur', title: 'Founder', org: 'Shift', scale: 1.6, x: '0%', y: '-10%' },
+              ].map((p, i) => <TeamCard key={i} p={p} i={i} />)}
+            </div>
+          </div>
+
+          {/* Mentors Section */}
+          <div className="ag-team-group" style={{ marginTop: '100px' }}>
+            <h2 className="ag-section-title" style={{ marginBottom: '60px' }}>Mentors</h2>
+            <div className="ag-mentors-grid">
+              {[
+                { initials: 'KM', name: 'Mr. Kamal', last: 'Kishore Malhotra', title: 'CEO', org: 'GIC RISE', img: kamalImg, scale: 1.6, x: '0%', y: '-10%' },
+                { initials: 'SK', name: 'Mr. Sonu', last: 'Kadam', title: 'Incubation Manager', org: 'GEC', scale: 1.6, x: '0%', y: '-10%' },
+                { initials: 'P', name: 'Mr.', last: 'Prasoon', title: 'General Manager', org: 'GEC', scale: 1.6, x: '0%', y: '-10%' },
+                { initials: 'SA', name: 'Mr. Sourav', last: 'Arya', title: 'Media Head', org: 'GIC RISE', scale: 1.6, x: '0%', y: '-10%' },
+              ].map((p, i) => <TeamCard key={i} p={p} i={i} />)}
+            </div>
+          </div>
+
+          {/* GEC Team Section */}
+          <div className="ag-team-group" style={{ marginTop: '100px' }}>
+            <h2 className="ag-section-title" style={{ marginBottom: '60px' }}>GEC Team</h2>
+            <div className="ag-mentors-grid">
+              {[
+                { initials: 'TG', name: 'Tanishqa', last: 'Giri', title: 'President', org: 'GEC', img: tanishqaImg, scale: 3.0, x: '0%', y: '-10%' },
+                { initials: 'PB', name: 'Piyush', last: 'Bhardwaj', title: 'Vice President', org: 'GEC', img: piyushImg, scale: 1.6, x: '0%', y: '-10%' },
+                { initials: 'SJ', name: 'Simran', last: 'Jaiswal', title: 'Secretary', org: 'GEC', img: simranImg, scale: 1.4, x: '0%', y: '-10%' },
+              ].map((p, i) => <TeamCard key={i} p={p} i={i} />)}
+            </div>
+          </div>
+
+          <div className="ag-mentor-more" style={{marginTop: '60px', textAlign: 'center'}}>
+            ....and <strong>20+</strong> startup founders
           </div>
         </div>
       </section>
