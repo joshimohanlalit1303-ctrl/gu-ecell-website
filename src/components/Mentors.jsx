@@ -10,7 +10,7 @@ import simranImg from '../assets/team/simran.png'
 const MENTORS = [
   { initials: 'DG', name: 'Dr. Dhruv Galgotia', role: 'CEO, Galgotias University', img: dhruvImg, scale: 1.6, x: '0%', y: '-8%', bio: "Spearheading a culture of innovation and excellence, empowering the next generation of global leaders and entrepreneurs." },
   { initials: 'AG', name: 'Aradhana Galgotias', role: 'Operational Director', img: aradhanaImg, scale: 1.6, x: '0%', y: '-8%', bio: "Driving GU's entrepreneurship agenda with decades of academic and industry leadership." },
-  { initials: 'KM', name: 'Mr. Kamal Kishor Malhotra', role: 'CEO of GICRISE', img: kamalImg, scale: 1.6, x: '0%', y: '-8%', bio: 'Bridging academia and industry with strategic mentorship for student ventures.' },
+  { initials: 'KM', name: 'Mr. Kamal Kishor Malhotra', role: 'CEO, GICRISE', img: kamalImg, scale: 1.6, x: '0%', y: '-8%', bio: 'Bridging academia and industry with strategic mentorship for student ventures.' },
 ]
 const LEADERS = [
   { role: 'President', name: 'Tanishqa Giri', initials: 'TG', img: tanishqaImg, scale: 3.0, x: '0%', y: '-8%', linkedin: 'https://www.linkedin.com/in/tanishqa-giri-b29a15260/' },
@@ -27,7 +27,7 @@ export default function Mentors() {
       <section id="mentors" className="section mentors-section" ref={mentorRef}>
         <div className="section-header">
           <p className="section-tag reveal">Guided By the Best</p>
-          <h2 className="section-title reveal">Our Mentors</h2>
+          <h2 className="section-title reveal">Visionary Leaders</h2>
         </div>
         <div className="mentors-grid">
           {MENTORS.map((m, i) => (

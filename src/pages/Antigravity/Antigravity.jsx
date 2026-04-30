@@ -205,10 +205,10 @@ export default function Antigravity() {
             <h2 className="ag-section-title" style={{ marginBottom: '100px' }}>Mentors</h2>
             <div className="ag-mentors-grid">
               {[
-                { initials: 'KM', name: 'Mr. Kamal', last: 'Kishore Malhotra', title: 'CEO', org: 'GIC RISE', img: kamalImg, scale: 1.6, x: '0%', y: '-5%' },
+                { initials: 'KM', name: 'Mr. Kamal', last: 'Kishore Malhotra', title: 'CEO', org: 'GICRISE', img: kamalImg, scale: 1.6, x: '0%', y: '-5%' },
                 { initials: 'SK', name: 'Mr. Sonu', last: 'Kadam', title: 'Incubation Manager', org: 'GEC', img: sonuImg, scale: 1.6, x: '0%', y: '-5%' },
                 { initials: 'P', name: 'Mr.', last: 'Prasoon', title: 'General Manager', org: 'GEC', img: prasoonImg, scale: 1.6, x: '0%', y: '-5%' },
-                { initials: 'SA', name: 'Mr. Sourav', last: 'Arya', title: 'Media Head', org: 'GIC RISE', img: souravImg, scale: 1.6, x: '0%', y: '-5%' },
+                { initials: 'SA', name: 'Mr. Sourav', last: 'Arya', title: 'Media Head', org: 'GICRISE', img: souravImg, scale: 1.6, x: '0%', y: '-5%' },
               ].map((p, i) => <TeamCard key={i} p={p} i={i} />)}
             </div>
           </div>
