@@ -4,8 +4,13 @@ import dhruvImg from '../../assets/team/dhruv.png';
 import aradhanaImg from '../../assets/team/aradhana.png';
 import kamalImg from '../../assets/team/kamal.png';
 import tanishqaImg from '../../assets/team/tanishqa.png';
+import tanishqaCohortImg from '../../assets/team/tanishqa_cohort.png';
 import piyushImg from '../../assets/team/piyush.png';
 import simranImg from '../../assets/team/simran.png';
+import rachitImg from '../../assets/team/rachit.png';
+import sonuImg from '../../assets/team/sonu.png';
+import prasoonImg from '../../assets/team/prasoon.png';
+import souravImg from '../../assets/team/sourav.png';
 
 const OUTCOMES = [
   { num: '01', title: 'A business with traction', desc: 'Target: ₹25L+ revenue (metrics may vary for marketplaces / tech products).', img: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=500' },
@@ -187,35 +192,32 @@ export default function Antigravity() {
             </div>
           </div>
 
-          {/* Founders Section */}
           <div className="ag-team-group">
             <h2 className="ag-section-title" style={{ marginBottom: '60px' }}>Founders</h2>
             <div className="ag-mentors-grid">
               {[
-                { initials: 'RM', name: 'Mr. Rachit', last: 'Mathur', title: 'Founder', org: 'Shift', scale: 1.6, x: '0%', y: '-10%' },
+                { initials: 'RM', name: 'Mr. Rachit', last: 'Mathur', title: 'Founder', org: 'Shift', img: rachitImg, scale: 1.6, x: '0%', y: '-10%' },
               ].map((p, i) => <TeamCard key={i} p={p} i={i} />)}
             </div>
           </div>
 
-          {/* Mentors Section */}
           <div className="ag-team-group">
             <h2 className="ag-section-title" style={{ marginBottom: '60px' }}>Mentors</h2>
             <div className="ag-mentors-grid">
               {[
                 { initials: 'KM', name: 'Mr. Kamal', last: 'Kishore Malhotra', title: 'CEO', org: 'GIC RISE', img: kamalImg, scale: 1.6, x: '0%', y: '-10%' },
-                { initials: 'SK', name: 'Mr. Sonu', last: 'Kadam', title: 'Incubation Manager', org: 'GEC', scale: 1.6, x: '0%', y: '-10%' },
-                { initials: 'P', name: 'Mr.', last: 'Prasoon', title: 'General Manager', org: 'GEC', scale: 1.6, x: '0%', y: '-10%' },
-                { initials: 'SA', name: 'Mr. Sourav', last: 'Arya', title: 'Media Head', org: 'GIC RISE', scale: 1.6, x: '0%', y: '-10%' },
+                { initials: 'SK', name: 'Mr. Sonu', last: 'Kadam', title: 'Incubation Manager', org: 'GEC', img: sonuImg, scale: 1.6, x: '0%', y: '-10%' },
+                { initials: 'P', name: 'Mr.', last: 'Prasoon', title: 'General Manager', org: 'GEC', img: prasoonImg, scale: 1.6, x: '0%', y: '-10%' },
+                { initials: 'SA', name: 'Mr. Sourav', last: 'Arya', title: 'Media Head', org: 'GIC RISE', img: souravImg, scale: 1.6, x: '0%', y: '-10%' },
               ].map((p, i) => <TeamCard key={i} p={p} i={i} />)}
             </div>
           </div>
 
-          {/* GEC Team Section */}
           <div className="ag-team-group">
             <h2 className="ag-section-title" style={{ marginBottom: '60px' }}>GEC Team</h2>
             <div className="ag-mentors-grid">
               {[
-                { initials: 'TG', name: 'Tanishqa', last: 'Giri', title: 'President', org: 'GEC', img: tanishqaImg, scale: 3.0, x: '0%', y: '-10%' },
+                { initials: 'TG', name: 'Tanishqa', last: 'Giri', title: 'President', org: 'GEC', img: tanishqaCohortImg, scale: 3.0, x: '0%', y: '-10%' },
                 { initials: 'PB', name: 'Piyush', last: 'Bhardwaj', title: 'Vice President', org: 'GEC', img: piyushImg, scale: 1.6, x: '0%', y: '-10%' },
                 { initials: 'SJ', name: 'Simran', last: 'Jaiswal', title: 'Secretary', org: 'GEC', img: simranImg, scale: 1.4, x: '0%', y: '-10%' },
               ].map((p, i) => <TeamCard key={i} p={p} i={i} />)}
