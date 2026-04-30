@@ -1,8 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@300;400;500&display=swap');
 
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
-html{font-size:16px;scroll-behavior:auto}
-body{background:#05050f;color:#fff;font-family:'Outfit',system-ui,sans-serif;overflow-x:hidden;cursor:none}
+html,body{width:100%;overflow-x:hidden;scroll-behavior:auto}
+body{background:#05050f;color:#fff;font-family:'Outfit',system-ui,sans-serif;cursor:none;margin:0;padding:0}
 a{text-decoration:none;color:inherit}
 
 /* Skip to main content — accessibility */
@@ -219,7 +219,7 @@ body.hov .cursor-dot{transform:translate(-50%,-50%) scale(1.6)}
 /* MENTORS */
 .mentors-section{flex-direction:column;padding:120px 48px}
 .mentors-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;width:100%;max-width:1100px;margin:0 auto}
-.mentor-card{padding:60px 24px 40px;border-radius:32px;background:linear-gradient(180deg, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0.01) 100%);border:1px solid rgba(255,255,255,0.08);box-shadow:0 10px 40px rgba(0,0,0,0.2);display:flex;flex-direction:column;align-items:center;text-align:center;gap:16px;transition:all .5s cubic-bezier(0.16, 1, 0.3, 1);position:relative;overflow:visible;backdrop-filter:blur(20px)}
+.mentor-card{padding:80px 24px 48px;border-radius:32px;background:linear-gradient(180deg, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0.01) 100%);border:1px solid rgba(255,255,255,0.08);box-shadow:0 10px 40px rgba(0,0,0,0.2);display:flex;flex-direction:column;align-items:center;text-align:center;gap:40px;transition:all .5s cubic-bezier(0.16, 1, 0.3, 1);position:relative;overflow:visible;backdrop-filter:blur(20px)}
 .mentor-card:hover{border-color:rgba(108,71,255,.25);transform:translateY(-4px)}
 .mentor-avatar{position:relative;width:140px;height:140px;display:flex;align-items:flex-end;justify-content:center;margin-bottom:32px;margin-top:-20px;background:radial-gradient(circle at top, rgba(108,71,255,0.25), rgba(108,71,255,0.05));border-radius:50%;border:1px solid rgba(108,71,255,0.4);box-shadow:inset 0 0 40px rgba(108,71,255,0.25);animation:float 6s ease-in-out infinite}
 .avatar-ring{position:absolute;inset:-12px;border-radius:50%;border:1px dashed rgba(108,71,255,.3);animation:spin 20s linear infinite}
@@ -235,7 +235,7 @@ body.hov .cursor-dot{transform:translate(-50%,-50%) scale(1.6)}
 /* LEADERS */
 .leaders-section{flex-direction:column;padding:80px 48px}
 .leaders-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;width:100%;max-width:900px;margin:40px auto 0}
-.leader-card{padding:60px 24px 40px;border-radius:32px;background:linear-gradient(180deg, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0.01) 100%);border:1px solid rgba(255,255,255,0.08);box-shadow:0 10px 40px rgba(0,0,0,0.2);text-align:center;transition:all .5s cubic-bezier(0.16, 1, 0.3, 1);display:flex;flex-direction:column;align-items:center;position:relative;overflow:visible;backdrop-filter:blur(20px)}
+.leader-card{padding:80px 24px 48px;border-radius:32px;background:linear-gradient(180deg, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0.01) 100%);border:1px solid rgba(255,255,255,0.08);box-shadow:0 10px 40px rgba(0,0,0,0.2);text-align:center;transition:all .5s cubic-bezier(0.16, 1, 0.3, 1);display:flex;flex-direction:column;align-items:center;position:relative;overflow:visible;backdrop-filter:blur(20px);gap:40px}
 .leader-card::before{content:'';position:absolute;inset:0;border-radius:32px;background:radial-gradient(ellipse at 50% 0%,rgba(108,71,255,0.15),transparent 70%);opacity:0;transition:opacity .5s ease;pointer-events:none}
 .leader-card:hover{border-color:rgba(108,71,255,.4);transform:translateY(-10px);box-shadow:0 20px 50px rgba(108,71,255,0.15)}
 .leader-card:hover::before{opacity:1}
@@ -281,8 +281,9 @@ footer{position:relative;z-index:20;padding:60px 48px;border-top:1px solid var(-
   .stats-grid{grid-template-columns:repeat(2,1fr)}
   .teams-grid{grid-template-columns:repeat(2,1fr)}
   .events-grid{grid-template-columns:1fr}
-  .mentors-grid{grid-template-columns:1fr}
-  .leaders-grid{grid-template-columns:repeat(2,1fr)}
+  .mentors-grid{grid-template-columns:1fr;gap:140px;padding:20px}
+  .leaders-grid{grid-template-columns:1fr;gap:120px;padding:20px}
+  .leader-card, .mentor-card{margin-top:40px}
   .hero-badge{display:none}
   .flip-card{height:200px}
 }

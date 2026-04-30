@@ -303,9 +303,14 @@
   max-width: 1100px;
   margin: 0 auto;
 }
+@media (max-width: 768px) {
+  .ag-mentors-grid {
+    gap: 120px;
+  }
+}
 
 .ag-mentor-card {
-  padding: 60px 24px 40px;
+  padding: 80px 24px 48px;
   border-radius: 32px;
   background: linear-gradient(180deg, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0.01) 100%);
   border: 1px solid rgba(255,255,255,0.08);
@@ -314,7 +319,7 @@
   flex-direction: column;
   align-items: center;
   text-align: center;
-  gap: 20px;
+  gap: 40px;
   position: relative;
   transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
 }
@@ -704,8 +709,8 @@
   .ag-path-divider span { padding: 0 12px; }
   .ag-hero-footer { flex-direction: column; gap: 24px; }
   .ag-pillars-grid { grid-template-columns: 1fr; }
-  .ag-mentors-grid { justify-content: center; }
-  .ag-mentor-card { width: calc(50% - 12px); }
+  .ag-mentors-grid { justify-content: center; gap: 140px; }
+  .ag-mentor-card { width: 100%; max-width: 320px; margin-top: 40px; }
   .ag-details-banner { padding: 32px; }
   .ag-media-card { aspect-ratio: 16/9; min-height: auto; width: 100%; max-width: 450px; margin: 32px auto 0; }
   .ag-media-overlay { padding: 16px; text-align: center; align-items: center; justify-content: center; gap: 12px; }

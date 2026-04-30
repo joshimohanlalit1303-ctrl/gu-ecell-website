@@ -91,28 +91,39 @@ export default function TubesCanvas() {
       })
       .catch(err => console.warn('[TubesCanvas] failed to load:', err))
 
-    // ── Pointer → Mouse bridge (makes tubes follow cursor/finger) ──
+    // ── Pointer/Touch → Mouse bridge (makes tubes follow finger) ──
     let rafid = null
-    const onPointerMove = e => {
-      // Throttle to RAF for performance
+    const onMove = (clientX, clientY) => {
       if (rafid) cancelAnimationFrame(rafid)
       rafid = requestAnimationFrame(() => {
-        // Synthesise mousemove for the library
         const evt = new MouseEvent('mousemove', {
           bubbles: true,
           cancelable: true,
-          clientX: e.clientX,
-          clientY: e.clientY,
+          clientX,
+          clientY,
           view: window,
         })
         window.dispatchEvent(evt)
+        document.dispatchEvent(evt)
+        document.body.dispatchEvent(evt)
+        // Also try targeting the canvas wrapper if it exists
+        const wrapper = document.querySelector('.tubes-canvas-wrapper')
+        if (wrapper) wrapper.dispatchEvent(evt)
       })
+    }
+
+    const onPointerMove = e => onMove(e.clientX, e.clientY)
+    const onTouchMove = e => {
+      if (e.touches.length > 0) {
+        onMove(e.touches[0].clientX, e.touches[0].clientY)
+      }
     }
 
     const onTouchEnd = () => recolor()
 
     window.addEventListener('pointermove', onPointerMove, { passive: true })
-    window.addEventListener('touchend',   onTouchEnd,   { passive: true })
+    window.addEventListener('touchmove',   onTouchMove,   { passive: true })
+    window.addEventListener('touchend',    onTouchEnd,    { passive: true })
 
     // ── Scroll: fade out + disable pointer-events past hero ──
     const onScroll = () => {
@@ -141,6 +152,7 @@ export default function TubesCanvas() {
       window.removeEventListener('scroll',        onScroll)
       window.removeEventListener('ecell-recolor', recolor)
       window.removeEventListener('pointermove',   onPointerMove)
+      window.removeEventListener('touchmove',     onTouchMove)
       window.removeEventListener('touchend',      onTouchEnd)
       appRef.current = null
     }
