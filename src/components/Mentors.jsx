@@ -13,9 +13,9 @@ const MENTORS = [
   { initials: 'KM', name: 'Mr. Kamal Kishor Malhotra', role: 'CEO of GICRISE', img: kamalImg, scale: 1.6, x: '0%', y: '-8%', bio: 'Bridging academia and industry with strategic mentorship for student ventures.' },
 ]
 const LEADERS = [
-  { role: 'President', name: 'Tanishqa Giri', initials: 'TG', img: tanishqaImg, scale: 2.8, x: '-8%', y: '-15%', linkedin: 'https://www.linkedin.com/in/tanishqa-giri-b29a15260/' },
+  { role: 'President', name: 'Tanishqa Giri', initials: 'TG', img: tanishqaImg, scale: 2.6, x: '0%', y: '-8%', linkedin: 'https://www.linkedin.com/in/tanishqa-giri-b29a15260/' },
   { role: 'Vice President', name: 'Piyush Bhardwaj', initials: 'PB', img: piyushImg, scale: 1.6, x: '0%', y: '-8%', linkedin: 'https://www.linkedin.com/in/piyush-bhardwaj-2a6b98247/' },
-  { role: 'Secretary', name: 'Simran Jaiswal', initials: 'SJ', img: simranImg, scale: 1.4, x: '0%', y: '-2%', linkedin: 'https://www.linkedin.com/in/simran-jaiswal-62ba4b2b7/' },
+  { role: 'Secretary', name: 'Simran Jaiswal', initials: 'SJ', img: simranImg, scale: 1.6, x: '0%', y: '-8%', linkedin: 'https://www.linkedin.com/in/simran-jaiswal-62ba4b2b7/' },
 ]
 
 export default function Mentors() {
