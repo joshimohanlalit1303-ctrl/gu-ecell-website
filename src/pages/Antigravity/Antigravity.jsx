@@ -139,9 +139,9 @@ export default function Antigravity() {
           
           <div className="ag-mentors-grid">
             {[
-              { initials: 'TG', name: 'Tanishqa', last: 'Giri', title: 'President', org: 'GEC', img: tanishqaImg, scale: 4.2, x: '0%', y: '-8%' },
+              { initials: 'TG', name: 'Tanishqa', last: 'Giri', title: 'President', org: 'GEC', img: tanishqaImg, scale: 3.0, x: '0%', y: '-8%' },
               { initials: 'PB', name: 'Piyush', last: 'Bhardwaj', title: 'Vice President', org: 'GEC', img: piyushImg, scale: 1.6, x: '0%', y: '-8%' },
-              { initials: 'SJ', name: 'Simran', last: 'Jaiswal', title: 'Secretary', org: 'GEC', img: simranImg, scale: 1.15, x: '0%', y: '-4%' },
+              { initials: 'SJ', name: 'Simran', last: 'Jaiswal', title: 'Secretary', org: 'GEC', img: simranImg, scale: 1.4, x: '0%', y: '-8%' },
             ].map((p, i) => (
               <div className="ag-mentor-card" style={{ 
                 transitionDelay: `${i * 0.05}s`,
