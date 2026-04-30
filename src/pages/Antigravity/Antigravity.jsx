@@ -183,43 +183,43 @@ export default function Antigravity() {
           
           {/* Supporters Section */}
           <div className="ag-team-group">
-            <h2 className="ag-section-title" style={{ marginBottom: '60px' }}>Supporters</h2>
+            <h2 className="ag-section-title" style={{ marginBottom: '100px' }}>Supporters</h2>
             <div className="ag-mentors-grid">
               {[
-                { initials: 'DG', name: 'Dr. Dhruv', last: 'Galgotias', title: 'CEO', org: 'Galgotias University', img: dhruvImg, scale: 1.6, x: '0%', y: '-10%' },
-                { initials: 'AG', name: 'Ms. Aradhana', last: 'Galgotias', title: 'Operational Director', org: 'Galgotias University', img: aradhanaImg, scale: 1.6, x: '0%', y: '-10%' },
+                { initials: 'DG', name: 'Dr. Dhruv', last: 'Galgotias', title: 'CEO', org: 'Galgotias University', img: dhruvImg, scale: 1.6, x: '0%', y: '-5%' },
+                { initials: 'AG', name: 'Ms. Aradhana', last: 'Galgotias', title: 'Operational Director', org: 'Galgotias University', img: aradhanaImg, scale: 1.6, x: '0%', y: '-5%' },
               ].map((p, i) => <TeamCard key={i} p={p} i={i} />)}
             </div>
           </div>
 
           <div className="ag-team-group">
-            <h2 className="ag-section-title" style={{ marginBottom: '60px' }}>Founders</h2>
+            <h2 className="ag-section-title" style={{ marginBottom: '100px' }}>Founders</h2>
             <div className="ag-mentors-grid">
               {[
-                { initials: 'RM', name: 'Mr. Rachit', last: 'Mathur', title: 'Founder', org: 'Shift', img: rachitImg, scale: 1.6, x: '0%', y: '-10%' },
+                { initials: 'RM', name: 'Mr. Rachit', last: 'Mathur', title: 'Founder', org: 'Shift', img: rachitImg, scale: 1.6, x: '0%', y: '-5%' },
               ].map((p, i) => <TeamCard key={i} p={p} i={i} />)}
             </div>
           </div>
 
           <div className="ag-team-group">
-            <h2 className="ag-section-title" style={{ marginBottom: '60px' }}>Mentors</h2>
+            <h2 className="ag-section-title" style={{ marginBottom: '100px' }}>Mentors</h2>
             <div className="ag-mentors-grid">
               {[
-                { initials: 'KM', name: 'Mr. Kamal', last: 'Kishore Malhotra', title: 'CEO', org: 'GIC RISE', img: kamalImg, scale: 1.6, x: '0%', y: '-10%' },
-                { initials: 'SK', name: 'Mr. Sonu', last: 'Kadam', title: 'Incubation Manager', org: 'GEC', img: sonuImg, scale: 1.6, x: '0%', y: '-10%' },
-                { initials: 'P', name: 'Mr.', last: 'Prasoon', title: 'General Manager', org: 'GEC', img: prasoonImg, scale: 1.6, x: '0%', y: '-10%' },
-                { initials: 'SA', name: 'Mr. Sourav', last: 'Arya', title: 'Media Head', org: 'GIC RISE', img: souravImg, scale: 1.6, x: '0%', y: '-10%' },
+                { initials: 'KM', name: 'Mr. Kamal', last: 'Kishore Malhotra', title: 'CEO', org: 'GIC RISE', img: kamalImg, scale: 1.6, x: '0%', y: '-5%' },
+                { initials: 'SK', name: 'Mr. Sonu', last: 'Kadam', title: 'Incubation Manager', org: 'GEC', img: sonuImg, scale: 1.6, x: '0%', y: '-5%' },
+                { initials: 'P', name: 'Mr.', last: 'Prasoon', title: 'General Manager', org: 'GEC', img: prasoonImg, scale: 1.6, x: '0%', y: '-5%' },
+                { initials: 'SA', name: 'Mr. Sourav', last: 'Arya', title: 'Media Head', org: 'GIC RISE', img: souravImg, scale: 1.6, x: '0%', y: '-5%' },
               ].map((p, i) => <TeamCard key={i} p={p} i={i} />)}
             </div>
           </div>
 
           <div className="ag-team-group">
-            <h2 className="ag-section-title" style={{ marginBottom: '60px' }}>GEC Team</h2>
+            <h2 className="ag-section-title" style={{ marginBottom: '100px' }}>GEC Team</h2>
             <div className="ag-mentors-grid">
               {[
-                { initials: 'TG', name: 'Tanishqa', last: 'Giri', title: 'President', org: 'GEC', img: tanishqaCohortImg, scale: 1.8, x: '0%', y: '-10%' },
-                { initials: 'PB', name: 'Piyush', last: 'Bhardwaj', title: 'Vice President', org: 'GEC', img: piyushImg, scale: 1.6, x: '0%', y: '-10%' },
-                { initials: 'SJ', name: 'Simran', last: 'Jaiswal', title: 'Secretary', org: 'GEC', img: simranImg, scale: 1.6, x: '0%', y: '-10%' },
+                { initials: 'TG', name: 'Tanishqa', last: 'Giri', title: 'President', org: 'GEC', img: tanishqaCohortImg, scale: 1.8, x: '0%', y: '-5%' },
+                { initials: 'PB', name: 'Piyush', last: 'Bhardwaj', title: 'Vice President', org: 'GEC', img: piyushImg, scale: 1.6, x: '0%', y: '-5%' },
+                { initials: 'SJ', name: 'Simran', last: 'Jaiswal', title: 'Secretary', org: 'GEC', img: simranImg, scale: 1.6, x: '0%', y: '-5%' },
               ].map((p, i) => <TeamCard key={i} p={p} i={i} />)}
             </div>
           </div>
