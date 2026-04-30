@@ -15,8 +15,8 @@ export default function Footer() {
         <div className="footer-info">
           <p>Plot No.2, Sector 17-A, Yamuna Expressway, Greater Noida</p>
           <p>
-            <a href="mailto:registrar@galgotiasuniversity.edu.in">
-              registrar@galgotiasuniversity.edu.in
+            <a href="mailto:ecell@galgotiasuniversity.edu.in">
+              ecell@galgotiasuniversity.edu.in
             </a>
           </p>
         </div>

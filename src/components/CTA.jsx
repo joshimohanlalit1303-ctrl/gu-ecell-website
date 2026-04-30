@@ -11,7 +11,7 @@ export default function CTA() {
         <h2 className="cta-title">Build Something <span className="gradient-text">Real.</span></h2>
         <p className="cta-body">Join hundreds of students turning ideas into startups. Applications are open.</p>
         <a
-          href="mailto:registrar@galgotiasuniversity.edu.in"
+          href="mailto:ecell@galgotiasuniversity.edu.in"
           className="btn btn-primary btn-xl"
           id="cta-apply"
         >

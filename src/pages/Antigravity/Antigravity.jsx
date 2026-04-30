@@ -102,17 +102,18 @@ export default function Antigravity() {
             </a>
             
             <div className="ag-hero-footer">
-              <div className="ag-footer-col">
-                <span className="ag-footer-label">Built by industry experts, founders and leaders</span>
-                <div className="ag-footer-logos">
-                  <div className="ag-logo-box">GEC</div>
-                  <div className="ag-logo-box">Alumni</div>
+              <div className="ag-footer-item">
+                <div className="ag-footer-icon"><i className="ph-bold ph-users-three"></i></div>
+                <div className="ag-footer-info">
+                  <span className="ag-footer-label">Built by</span>
+                  <span className="ag-footer-value">Founders, leaders & industry experts</span>
                 </div>
               </div>
-              <div className="ag-footer-col">
-                <span className="ag-footer-label">Supported by</span>
-                <div className="ag-footer-logos">
-                  <div className="ag-logo-box">Galgotias University</div>
+              <div className="ag-footer-item">
+                <div className="ag-footer-icon"><i className="ph-bold ph-buildings"></i></div>
+                <div className="ag-footer-info">
+                  <span className="ag-footer-label">Supported by</span>
+                  <span className="ag-footer-value">Galgotias University</span>
                 </div>
               </div>
             </div>
