@@ -43,6 +43,27 @@ function TeamCard({ p, i }) {
   );
 }
 
+function MessageCard({ title, text, author, role }) {
+  return (
+    <div className="ag-message-card">
+      <div className="ag-message-header">
+        <i className="ph-bold ph-quotes"></i>
+        <h3>{title}</h3>
+      </div>
+      <div className="ag-message-body">
+        {text.map((p, idx) => <p key={idx}>{p}</p>)}
+      </div>
+      <div className="ag-message-footer">
+        <div className="ag-message-line"></div>
+        <div className="ag-message-author">
+          <strong>{author}</strong>
+          <span>{role}</span>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 export default function Antigravity() {
   const [activeTerm, setActiveTerm] = useState(1);
   const currentTermData = JOURNEY_TERMS.find(t => t.id === activeTerm);
@@ -203,6 +224,47 @@ export default function Antigravity() {
 
           <div className="ag-mentor-more" style={{marginTop: '60px', textAlign: 'center'}}>
             ....and <strong>20+</strong> startup founders
+          </div>
+        </div>
+      {/* 4. Leadership Messages */}
+      <section className="ag-messages-section">
+        <div className="ag-container">
+          <h2 className="ag-section-title" style={{ marginBottom: '60px' }}>Leadership Messages</h2>
+          
+          <div className="ag-messages-grid">
+            <MessageCard 
+              title="President’s Message"
+              text={[
+                "We started the Galgotias Entrepreneurship Cohort Program to create a space where students actually spend time building something of their own.",
+                "This is not just about attending sessions. You’ll work on your idea every week understanding the problem, talking to users, building, and improving.",
+                "There’s a structure to guide you, but the work depends on you. Your consistency and effort will decide what you take away from it.",
+                "By the end of these 4 months, the goal is simple—you should have something real in your hands that you understand and can take forward."
+              ]}
+              author="Tanishqa Giri"
+              role="President, Galgotias Entrepreneurship Cell"
+            />
+
+            <MessageCard 
+              title="Vice President’s Message"
+              text={[
+                "This cohort is designed to make the process of building a startup more clear and structured.",
+                "You’ll work on your idea step by step, with regular feedback, mentorship, and a peer group building alongside you.",
+                "If you stay consistent and put in the effort, you’ll see real progress by the end of the program."
+              ]}
+              author="Piyush Bhardwaj"
+              role="Vice President, Galgotias Entrepreneurship Cell"
+            />
+
+            <MessageCard 
+              title="Secretary’s Message"
+              text={[
+                "This program is practical and focused.",
+                "You’ll spend your time working on your idea, testing it with users, and improving it based on feedback.",
+                "If you stay engaged and take it seriously, you’ll leave with something you’ve actually built and understand well."
+              ]}
+              author="Simran Jaiswal"
+              role="Secretary, Galgotias Entrepreneurship Cell"
+            />
           </div>
         </div>
       </section>
