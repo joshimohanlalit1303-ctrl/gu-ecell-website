@@ -72,12 +72,19 @@ export default function Hero() {
       <motion.div className="hero-content"
         initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.6, delay: 0.2 }}>
 
-        <motion.p className="hero-eyebrow"
-          initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.4, duration: 0.7 }}>
-          <span className="eyebrow-dot" />
-          <span>{eyebrow}</span>
-          <span className="eyebrow-line" />
-        </motion.p>
+        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+          <motion.p className="hero-eyebrow"
+            initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.4, duration: 0.7 }}>
+            <span className="eyebrow-dot" />
+            <span>{eyebrow}</span>
+            <span className="eyebrow-line" />
+          </motion.p>
+          <motion.p
+            initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.5, duration: 0.7 }}
+            style={{ fontSize: '12px', letterSpacing: '0.2em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.7)', fontFamily: 'var(--mono)' }}>
+            Galgotias Entrepreneurship Cell
+          </motion.p>
+        </div>
 
         <motion.h1 className="hero-title"
           initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.55, duration: 0.9, ease: [0.19, 1, 0.22, 1] }}>

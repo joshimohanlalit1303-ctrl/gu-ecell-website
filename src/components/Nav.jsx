@@ -33,7 +33,7 @@ export default function Nav() {
             <a key={l} href={`/#${l.toLowerCase()}`} className="nav-link"
               onClick={e => handleNav(e, l.toLowerCase())}>{l}</a>
           ))}
-          <a href="/antigravity" className="nav-link" style={{color: 'var(--accent)'}}>Cohort</a>
+          <a href="/cohort" className="nav-link" style={{color: 'var(--accent)'}}>Cohort</a>
         </div>
         <a href="/#cta" className="nav-cta" onClick={e => handleNav(e, 'cta')}>Join Now</a>
         <button className="nav-menu-btn" aria-label="Menu" onClick={() => setMenuOpen(o => !o)}>
@@ -47,7 +47,7 @@ export default function Nav() {
           <a key={l} href={`/#${l.toLowerCase()}`} className="mobile-link"
             onClick={e => handleNav(e, l.toLowerCase())}>{l}</a>
         ))}
-        <a href="/antigravity" className="mobile-link" style={{ color: 'var(--accent)' }}>Cohort</a>
+        <a href="/cohort" className="mobile-link" style={{ color: 'var(--accent)' }}>Cohort</a>
         <a href="/#cta" className="mobile-link" style={{ color: 'var(--accent)' }}
           onClick={e => handleNav(e, 'cta')}>Join Now</a>
       </div>

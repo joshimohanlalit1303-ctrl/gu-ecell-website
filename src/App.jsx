@@ -23,7 +23,7 @@ export default function App() {
   const [scrollPct, setScrollPct] = useState(0)
   
   const path = window.location.pathname;
-  const isAntigravity = path.startsWith('/antigravity');
+  const isCohortProgram = path.startsWith('/cohort');
 
   // Global scroll-reveal — catches every .reveal in every component
   useEffect(() => {
@@ -55,7 +55,7 @@ export default function App() {
 
   return (
     <>
-      {!isAntigravity && <Loader onDone={() => setLoaded(true)} />}
+      {!isCohortProgram && <Loader onDone={() => setLoaded(true)} />}
       <Cursor />
 
       {/* Scroll progress bar */}
@@ -80,10 +80,10 @@ export default function App() {
 
       <Nav />
       
-      {!isAntigravity && <CohortPopup />}
+      {!isCohortProgram && <CohortPopup />}
 
       <main id="main-content">
-        {isAntigravity ? (
+        {isCohortProgram ? (
           <Antigravity />
         ) : (
           <>

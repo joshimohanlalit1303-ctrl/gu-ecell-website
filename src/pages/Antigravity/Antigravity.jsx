@@ -1,12 +1,18 @@
 import React, { useState } from 'react';
 import './Antigravity.css';
+import dhruvImg from '../../assets/team/dhruv.png';
+import aradhanaImg from '../../assets/team/aradhana.png';
+import kamalImg from '../../assets/team/kamal.png';
+import tanishqaImg from '../../assets/team/tanishqa.png';
+import piyushImg from '../../assets/team/piyush.png';
+import simranImg from '../../assets/team/simran.png';
 
 const OUTCOMES = [
-  { num: '01', title: 'A business with traction', desc: 'Target: ₹25L+ revenue (metrics may vary for marketplaces / tech products).' },
-  { num: '02', title: '100+ founder interactions', desc: 'Network with operators who visit campus: get direct feedback, mentorship, and exposure.' },
-  { num: '03', title: 'Investor pitch opportunities', desc: 'Pitch to VCs across demo days; stand a chance to raise funds; selected startups get a fellowship.' },
-  { num: '04', title: 'AI-native execution skills', desc: 'Learn modern tools and workflows to operate in an AI-driven world.' },
-  { num: '05', title: 'Access to Startup roles', desc: "Get support from GEC's career team to land entry-level roles at fast-growing startups." },
+  { num: '01', title: 'A business with traction', desc: 'Target: ₹25L+ revenue (metrics may vary for marketplaces / tech products).', img: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=500' },
+  { num: '02', title: '100+ founder interactions', desc: 'Network with operators who visit campus: get direct feedback, mentorship, and exposure.', img: 'https://images.unsplash.com/photo-1515187029135-18ee286d815b?auto=format&fit=crop&q=80&w=500' },
+  { num: '03', title: 'Investor pitch opportunities', desc: 'Pitch to VCs across demo days; stand a chance to raise funds; selected startups get a fellowship.', img: 'https://images.unsplash.com/photo-1475721027785-f74eccf877e2?auto=format&fit=crop&q=80&w=500' },
+  { num: '04', title: 'AI-native execution skills', desc: 'Learn modern tools and workflows to operate in an AI-driven world.', img: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&q=80&w=500' },
+  { num: '05', title: 'Access to Startup roles', desc: "Get support from GEC's career team to land entry-level roles at fast-growing startups.", img: 'https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&q=80&w=500' },
 ];
 
 const JOURNEY_TERMS = [
@@ -36,7 +42,7 @@ export default function Antigravity() {
             <div className="ag-hero-badges">
               <div className="ag-badge"><i className="ph-bold ph-calendar-blank"></i> 120 Days</div>
               <div className="ag-badge"><i className="ph-bold ph-clock"></i> Part-time</div>
-              <div className="ag-badge"><i className="ph-bold ph-map-pin"></i> GU Campus</div>
+              <div className="ag-badge"><i className="ph-bold ph-map-pin"></i> Galgotias University Campus</div>
               <div className="ag-badge"><i className="ph-bold ph-users"></i> 50 Seats</div>
             </div>
             
@@ -52,16 +58,16 @@ export default function Antigravity() {
             
             <div className="ag-hero-footer">
               <div className="ag-footer-col">
-                <span className="ag-footer-label">Built by leaders from:</span>
+                <span className="ag-footer-label">Built by industry experts, founders and leaders</span>
                 <div className="ag-footer-logos">
                   <div className="ag-logo-box">GEC</div>
                   <div className="ag-logo-box">Alumni</div>
                 </div>
               </div>
               <div className="ag-footer-col">
-                <span className="ag-footer-label">Supported by:</span>
+                <span className="ag-footer-label">Supported by</span>
                 <div className="ag-footer-logos">
-                  <div className="ag-logo-box">Galgotias Incubation</div>
+                  <div className="ag-logo-box">Galgotias University</div>
                 </div>
               </div>
             </div>
@@ -92,7 +98,7 @@ export default function Antigravity() {
           
           <div className="ag-pillars-grid">
             <div className="ag-pillar-card">
-              <div className="ag-pillar-img img-1"></div>
+              <div className="ag-pillar-img img-1"><div className="ag-pillar-overlay"></div></div>
               <div className="ag-pillar-content">
                 <div className="ag-pillar-stat">120<span>Days</span></div>
                 <p>Start with a real problem, build a solution, get customers, improve from feedback, then scale.</p>
@@ -100,7 +106,7 @@ export default function Antigravity() {
             </div>
             
             <div className="ag-pillar-card" style={{transitionDelay: '0.1s'}}>
-              <div className="ag-pillar-img img-2"></div>
+              <div className="ag-pillar-img img-2"><div className="ag-pillar-overlay"></div></div>
               <div className="ag-pillar-content">
                 <div className="ag-pillar-stat">10+<span>Bootcamps</span></div>
                 <p>Practical, founder-led workshops on product, go-to-market, sales, and design.</p>
@@ -108,7 +114,7 @@ export default function Antigravity() {
             </div>
             
             <div className="ag-pillar-card" style={{transitionDelay: '0.2s'}}>
-              <div className="ag-pillar-img img-3"></div>
+              <div className="ag-pillar-img img-3"><div className="ag-pillar-overlay"></div></div>
               <div className="ag-pillar-content">
                 <div className="ag-pillar-stat">1:1<span>Mentorship</span></div>
                 <p>A dedicated operator from Day 1 to pressure-test your decisions and unblock your progress.</p>
@@ -116,7 +122,7 @@ export default function Antigravity() {
             </div>
             
             <div className="ag-pillar-card" style={{transitionDelay: '0.3s'}}>
-              <div className="ag-pillar-img img-4"></div>
+              <div className="ag-pillar-img img-4"><div className="ag-pillar-overlay"></div></div>
               <div className="ag-pillar-content">
                 <div className="ag-pillar-stat">50<span>Builders</span></div>
                 <p>Live and build with a high-intent, execution-minded cohort right here on campus.</p>
@@ -129,20 +135,25 @@ export default function Antigravity() {
       {/* 3. Supporters and Investors (Mentors) */}
       <section className="ag-mentors-section">
         <div className="ag-container">
-          <h2 className="ag-section-title">Supporters and Mentors</h2>
+          <h2 className="ag-section-title" style={{ marginBottom: '80px' }}>Supporters and Mentors</h2>
           
           <div className="ag-mentors-grid">
             {[
-              { initials: 'DG', name: 'Dr. Dhruv', last: 'Galgotia', title: 'CEO', org: 'Galgotias University' },
-              { initials: 'AG', name: 'Dr. Aradhana', last: 'Galgotia', title: 'Chancellor', org: 'Galgotias University' },
-              { initials: 'KM', name: 'Dr. Kamal', last: 'Malhotra', title: 'Senior Mentor', org: 'GEC' },
-              { initials: 'TG', name: 'Tanishqa', last: 'Giri', title: 'President', org: 'GEC' },
-              { initials: 'PB', name: 'Piyush', last: 'Bhardwaj', title: 'Vice President', org: 'GEC' },
-              { initials: 'SJ', name: 'Simran', last: 'Jaiswal', title: 'Secretary', org: 'GEC' },
+              { initials: 'DG', name: 'Dr. Dhruv', last: 'Galgotia', title: 'CEO', org: 'Galgotias University', img: dhruvImg, scale: 2.1, x: '0%', y: '-10%' },
+              { initials: 'AG', name: 'Aradhana', last: 'Galgotias', title: 'Operational Director', org: 'Galgotias University', img: aradhanaImg, scale: 2.1, x: '0%', y: '-10%' },
+              { initials: 'KM', name: 'Mr. Kamal Kishor', last: 'Malhotra', title: 'CEO', org: 'GICRISE', img: kamalImg, scale: 1.8, x: '0%', y: '-5%' },
+              { initials: 'TG', name: 'Tanishqa', last: 'Giri', title: 'President', org: 'GEC', img: tanishqaImg, scale: 2.1, x: '18%', y: '-10%' },
+              { initials: 'PB', name: 'Piyush', last: 'Bhardwaj', title: 'Vice President', org: 'GEC', img: piyushImg, scale: 1.4, x: '0%', y: '-5%' },
+              { initials: 'SJ', name: 'Simran', last: 'Jaiswal', title: 'Secretary', org: 'GEC', img: simranImg, scale: 1.05, x: '0%', y: '0%' },
             ].map((p, i) => (
-              <div className="ag-mentor-card" style={{transitionDelay: `${i * 0.05}s`}} key={i}>
+              <div className="ag-mentor-card" style={{ 
+                transitionDelay: `${i * 0.05}s`,
+                '--img-scale': p.scale || 1,
+                '--img-x': p.x || '0%',
+                '--img-y': p.y || '0%'
+              }} key={i}>
                 <div className="ag-mentor-avatar">
-                  <div className="ag-mentor-placeholder" style={{fontSize: '16px', fontWeight: 'bold'}}>{p.initials}</div>
+                  {p.img ? <img src={p.img} alt={p.name} className="ag-mentor-img" /> : <div className="ag-mentor-placeholder" style={{fontSize: '16px', fontWeight: 'bold'}}>{p.initials}</div>}
                 </div>
                 <div className="ag-mentor-info">
                   <h4>{p.name} <strong>{p.last}</strong></h4>
@@ -281,8 +292,8 @@ export default function Antigravity() {
           <div className="ag-outcomes-container">
             {OUTCOMES.map((out, idx) => (
               <div className="ag-outcome-card" key={idx}>
-                <div className="ag-outcome-img">
-                  <i className="ph-fill ph-chart-line-up"></i>
+                <div className="ag-outcome-img" style={{backgroundImage: `url(${out.img})`, backgroundSize: 'cover', backgroundPosition: 'center'}}>
+                  <div className="ag-outcome-img-overlay"></div>
                 </div>
                 <div className="ag-outcome-body">
                   <div className="ag-outcome-header">

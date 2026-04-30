@@ -117,11 +117,20 @@ export default function TubesCanvas() {
 
     // ── Scroll: fade out + disable pointer-events past hero ──
     const onScroll = () => {
+      const isCohort = window.location.pathname.startsWith('/cohort')
+      if (isCohort) {
+        wrapper.style.opacity = '1'
+        wrapper.style.pointerEvents = 'none'
+        return
+      }
       const progress = Math.min(window.scrollY / window.innerHeight, 1)
       wrapper.style.opacity       = String(Math.max(1 - progress * 1.8, 0))
       wrapper.style.pointerEvents = progress > 0.55 ? 'none' : 'auto'
     }
     window.addEventListener('scroll', onScroll, { passive: true })
+    
+    // Call once to set initial state
+    onScroll()
 
     // ── Recolor from Hero section click event ──
     window.addEventListener('ecell-recolor', recolor)

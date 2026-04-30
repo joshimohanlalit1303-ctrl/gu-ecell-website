@@ -23,7 +23,7 @@ export default function CohortPopup() {
     <AnimatePresence>
       {show && (
         <motion.a
-          href="/antigravity"
+          href="/cohort"
           className="cohort-floating-widget"
           initial={{ opacity: 0, y: 80, scale: 0.8, rotate: -2 }}
           animate={{ opacity: 1, y: 0, scale: 1, rotate: 0 }}

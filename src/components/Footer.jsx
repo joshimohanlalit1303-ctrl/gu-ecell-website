@@ -20,6 +20,14 @@ export default function Footer() {
             </a>
           </p>
         </div>
+        <div className="footer-socials">
+          <a href="https://www.linkedin.com/company/ecell-gu/posts/?feedView=all" target="_blank" rel="noreferrer" className="social-link" title="LinkedIn">
+            <i className="ph-fill ph-linkedin-logo"></i>
+          </a>
+          <a href="https://www.instagram.com/galgotias.ecell/" target="_blank" rel="noreferrer" className="social-link" title="Instagram">
+            <i className="ph-fill ph-instagram-logo"></i>
+          </a>
+        </div>
         <div className="footer-bottom">
           <p className="footer-copy">© 2026 GEC. All rights reserved.</p>
           <div className="dev-mark">
