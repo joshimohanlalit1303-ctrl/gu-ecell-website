@@ -3,8 +3,8 @@
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100dvh;
   background: rgba(4, 4, 12, 0.75);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
@@ -12,17 +12,17 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 24px;
+  padding: 16px;
 }
 
 .app-popup-modal {
-  background: rgba(14, 14, 28, 0.6);
+  background: rgba(14, 14, 28, 0.85);
   border: 1px solid rgba(120, 80, 255, 0.3);
   box-shadow: 0 20px 45px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.05);
   border-radius: 20px;
   width: 100%;
   max-width: 650px;
-  max-height: calc(100vh - 48px);
+  max-height: calc(100dvh - 32px);
   overflow-y: auto;
   position: relative;
   padding: 40px;
@@ -704,6 +704,8 @@
   .app-popup-modal {
     padding: 24px 16px;
     width: calc(100% - 24px);
+    max-height: calc(100dvh - 32px);
+    overflow-y: auto;
   }
   .popup-header {
     margin-bottom: 20px;
