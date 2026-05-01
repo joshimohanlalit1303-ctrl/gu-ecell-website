@@ -1,4 +1,5 @@
 import { useState, useEffect, lazy, Suspense } from 'react'
+import './App.css'
 import Loader from './components/Loader'
 import Cursor from './components/Cursor'
 import Nav from './components/Nav'
@@ -13,6 +14,8 @@ import CTA from './components/CTA'
 import Footer from './components/Footer'
 import Antigravity from './pages/Antigravity/Antigravity'
 import CohortPopup from './components/CohortPopup'
+import AdminPortal from './pages/AdminPortal'
+import ApplicationPopup from './components/ApplicationPopup'
 
 // Lazy load heavy 3D components — they don't affect first paint
 const ParallaxCanvas = lazy(() => import('./components/ParallaxCanvas'))
@@ -21,9 +24,17 @@ const TubesCanvas = lazy(() => import('./components/TubesCanvas'))
 export default function App() {
   const [loaded, setLoaded] = useState(false)
   const [scrollPct, setScrollPct] = useState(0)
+  const [isApplyOpen, setIsApplyOpen] = useState(false)
   
   const path = window.location.pathname;
   const isCohortProgram = path.startsWith('/cohort');
+  const isAdminPortal = path.startsWith('/admin');
+
+  useEffect(() => {
+    const handleOpen = () => setIsApplyOpen(true)
+    window.addEventListener('open-apply-popup', handleOpen)
+    return () => window.removeEventListener('open-apply-popup', handleOpen)
+  }, [])
 
   // Global scroll-reveal — catches every .reveal in every component
   useEffect(() => {
@@ -52,6 +63,15 @@ export default function App() {
     window.addEventListener('scroll', onScroll, { passive: true })
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
+
+  if (isAdminPortal) {
+    return (
+      <>
+        <Cursor />
+        <AdminPortal />
+      </>
+    )
+  }
 
   return (
     <>
@@ -99,6 +119,8 @@ export default function App() {
         )}
         <Footer />
       </main>
+
+      <ApplicationPopup isOpen={isApplyOpen} onClose={() => setIsApplyOpen(false)} />
     </>
   )
 }

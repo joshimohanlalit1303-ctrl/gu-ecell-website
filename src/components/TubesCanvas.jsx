@@ -5,8 +5,8 @@ import { useEffect, useRef, useCallback } from 'react'
    Uses threejs-components@0.0.19/tubes1
 
    Mobile: touch events are bridged to synthetic
-   MouseEvents so the library's mousemove listener
-   picks them up and the tubes follow your finger.
+   MouseEvents & PointerEvents so the library's mousemove
+   and pointermove listeners pick them up and the tubes follow your finger.
    ───────────────────────────────────────────── */
 
 const BRAND_TUBE_COLORS  = ['#6c47ff', '#ff4778', '#00e5ff']
@@ -14,22 +14,6 @@ const BRAND_LIGHT_COLORS = ['#9b7eff', '#ff8fa3', '#80f0ff', '#a78bfa']
 
 const randomHex     = ()  => '#' + Math.floor(Math.random() * 0xffffff).toString(16).padStart(6, '0')
 const randomPalette = n   => Array.from({ length: n }, randomHex)
-
-// Synthesise a MouseEvent from a Touch and dispatch it on the target element.
-// The library listens on `document` or `window` for mousemove, so we dispatch
-// a real bubbling MouseEvent that propagates up the tree.
-const dispatchMouse = (type, touch, target) => {
-  const evt = new MouseEvent(type, {
-    bubbles: true,
-    cancelable: true,
-    clientX: touch.clientX,
-    clientY: touch.clientY,
-    screenX: touch.screenX,
-    screenY: touch.screenY,
-    view: window,
-  })
-  target.dispatchEvent(evt)
-}
 
 const WRAPPER_STYLE = {
   position: 'fixed',
@@ -96,34 +80,74 @@ export default function TubesCanvas() {
     const onMove = (clientX, clientY) => {
       if (rafid) cancelAnimationFrame(rafid)
       rafid = requestAnimationFrame(() => {
-        const evt = new MouseEvent('mousemove', {
+        if (!canvasRef.current) return
+
+        const mouseEvt = new MouseEvent('mousemove', {
           bubbles: true,
           cancelable: true,
           clientX,
           clientY,
           view: window,
         })
-        window.dispatchEvent(evt)
-        document.dispatchEvent(evt)
-        document.body.dispatchEvent(evt)
-        // Also try targeting the canvas wrapper if it exists
-        const wrapper = document.querySelector('.tubes-canvas-wrapper')
-        if (wrapper) wrapper.dispatchEvent(evt)
+
+        const pointerEvt = new PointerEvent('pointermove', {
+          bubbles: true,
+          cancelable: true,
+          clientX,
+          clientY,
+          pointerType: 'touch',
+          pointerId: 1,
+          isPrimary: true,
+          view: window,
+        })
+
+        // Target: window, document, document.body, canvas, wrapper
+        const targets = [
+          window,
+          document,
+          document.body,
+          canvasRef.current,
+          wrapperRef.current
+        ].filter(Boolean)
+
+        targets.forEach(t => {
+          try {
+            t.dispatchEvent(mouseEvt)
+            t.dispatchEvent(pointerEvt)
+          } catch (e) { /* ignore any target dispatch errors */ }
+        })
       })
     }
 
     const onPointerMove = e => onMove(e.clientX, e.clientY)
+    const onPointerDown = e => onMove(e.clientX, e.clientY)
+
     const onTouchMove = e => {
-      if (e.touches.length > 0) {
+      if (e.touches && e.touches.length > 0) {
+        onMove(e.touches[0].clientX, e.touches[0].clientY)
+      }
+    }
+    const onTouchStart = e => {
+      if (e.touches && e.touches.length > 0) {
         onMove(e.touches[0].clientX, e.touches[0].clientY)
       }
     }
 
     const onTouchEnd = () => recolor()
 
+    // Add listeners to window
     window.addEventListener('pointermove', onPointerMove, { passive: true })
+    window.addEventListener('pointerdown', onPointerDown, { passive: true })
     window.addEventListener('touchmove',   onTouchMove,   { passive: true })
+    window.addEventListener('touchstart',  onTouchStart,  { passive: true })
     window.addEventListener('touchend',    onTouchEnd,    { passive: true })
+
+    // Add listeners to wrapper
+    wrapper.addEventListener('pointermove', onPointerMove, { passive: true })
+    wrapper.addEventListener('pointerdown', onPointerDown, { passive: true })
+    wrapper.addEventListener('touchmove',   onTouchMove,   { passive: true })
+    wrapper.addEventListener('touchstart',  onTouchStart,  { passive: true })
+    wrapper.addEventListener('touchend',    onTouchEnd,    { passive: true })
 
     // ── Scroll: fade out + disable pointer-events past hero ──
     const onScroll = () => {
@@ -151,15 +175,25 @@ export default function TubesCanvas() {
       window.removeEventListener('resize',        syncSize)
       window.removeEventListener('scroll',        onScroll)
       window.removeEventListener('ecell-recolor', recolor)
+
       window.removeEventListener('pointermove',   onPointerMove)
+      window.removeEventListener('pointerdown',   onPointerDown)
       window.removeEventListener('touchmove',     onTouchMove)
+      window.removeEventListener('touchstart',    onTouchStart)
       window.removeEventListener('touchend',      onTouchEnd)
+
+      wrapper.removeEventListener('pointermove',  onPointerMove)
+      wrapper.removeEventListener('pointerdown',  onPointerDown)
+      wrapper.removeEventListener('touchmove',    onTouchMove)
+      wrapper.removeEventListener('touchstart',   onTouchStart)
+      wrapper.removeEventListener('touchend',     onTouchEnd)
+
       appRef.current = null
     }
   }, [recolor])
 
   return (
-    <div ref={wrapperRef} style={WRAPPER_STYLE} aria-hidden="true">
+    <div ref={wrapperRef} className="tubes-canvas-wrapper" style={WRAPPER_STYLE} aria-hidden="true">
       <canvas
         ref={canvasRef}
         className="tubes-canvas"

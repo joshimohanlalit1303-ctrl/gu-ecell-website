@@ -492,3 +492,163 @@ footer{position:relative;z-index:20;padding:60px 48px;border-top:1px solid var(-
     font-size: 13px;
   }
 }
+
+/* ================= GEC RECRUITMENT FORM STYLES ================= */
+.cta-expanded {
+  padding: 100px 48px !important;
+  background: radial-gradient(ellipse at 50% 50%, rgba(var(--rgb-accent), 0.08), var(--bg) 70%) !important;
+}
+
+.gec-form-container {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: left;
+  background: var(--glass);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--r2);
+  padding: 56px;
+  backdrop-filter: blur(24px);
+  animation: gecFadeIn 0.6s var(--ease);
+}
+
+@keyframes gecFadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.gec-form-header {
+  text-align: center;
+}
+
+.gec-application-form {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.gec-form-section {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  padding-bottom: 32px;
+}
+
+.gec-step-label {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--accent);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.gec-form-section h3 {
+  font-size: 20px;
+  font-weight: 700;
+  color: #fff;
+}
+
+.gec-form-desc {
+  font-size: 14px;
+  color: var(--white70);
+  margin-top: -8px;
+}
+
+.gec-form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.gec-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.gec-form-group label {
+  font-size: 13px;
+  font-weight: 500;
+  color: #fff;
+}
+
+.gec-form-group input,
+.gec-form-group textarea {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 14px 18px;
+  color: #fff;
+  font-size: 14px;
+  font-family: inherit;
+  transition: all 0.3s;
+}
+
+.gec-form-group input:focus,
+.gec-form-group textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+  background: rgba(var(--rgb-accent), 0.05);
+  box-shadow: 0 0 15px rgba(var(--rgb-accent), 0.15);
+}
+
+.gec-checkbox-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 14px;
+}
+
+.gec-checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 12px 16px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.gec-checkbox-label:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+.gec-checkbox-label input[type="checkbox"] {
+  accent-color: var(--accent);
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+}
+
+.gec-checkbox-label span {
+  font-size: 13px;
+  color: var(--white70);
+}
+
+.gec-radio-group {
+  display: flex;
+  gap: 32px;
+}
+
+.gec-radio-group label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  font-size: 14px;
+  color: var(--white70);
+}
+
+.gec-radio-group input[type="radio"] {
+  accent-color: var(--accent);
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+}
+
+@media(max-width: 768px) {
+  .gec-form-container { padding: 32px 24px; }
+  .gec-form-row { grid-template-columns: 1fr; gap: 16px; }
+}

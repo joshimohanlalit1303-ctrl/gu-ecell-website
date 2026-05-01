@@ -108,11 +108,14 @@ export default function Hero() {
 
         <motion.div className="hero-actions"
           initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.9, duration: 0.7 }}>
-          <a href="#cta" className="btn btn-primary mag-btn"
-            onMouseMove={e => onMagMove(e, e.currentTarget)} onMouseLeave={onMagLeave}
-            onClick={e => { e.preventDefault(); e.stopPropagation(); document.getElementById('cta')?.scrollIntoView({ behavior: 'smooth' }) }}>
+          <button 
+            className="btn btn-primary mag-btn"
+            onMouseMove={e => onMagMove(e, e.currentTarget)} 
+            onMouseLeave={onMagLeave}
+            onClick={() => window.dispatchEvent(new Event('open-apply-popup'))}
+          >
             Apply to GEC
-          </a>
+          </button>
           <a href="#events" className="btn btn-ghost mag-btn"
             onMouseMove={e => onMagMove(e, e.currentTarget)} onMouseLeave={onMagLeave}
             onClick={e => { e.preventDefault(); e.stopPropagation(); document.getElementById('events')?.scrollIntoView({ behavior: 'smooth' }) }}>
